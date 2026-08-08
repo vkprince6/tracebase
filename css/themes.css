@@ -1,0 +1,17 @@
+/* =========================================================
+   TRACEBASE — Theme helpers
+   Base theme tokens live in variables.css ([data-theme="dark"]).
+   This file holds small theme-dependent tweaks that aren't
+   pure custom-property swaps.
+   ========================================================= */
+
+[data-theme="dark"] .sidebar { background: var(--surface-sidebar); }
+[data-theme="dark"] .logo-mark { box-shadow: 0 0 0 1px rgba(255,255,255,0.08); }
+[data-theme="dark"] .skeleton { opacity: 0.7; }
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: #3a3f4d; }
+[data-theme="dark"] .badge::before { opacity: 0.9; }
+
+.theme-toggle-btn { display: flex; align-items: center; gap: var(--space-2); }
+.theme-toggle-btn .icon-sun { display: none; }
+[data-theme="dark"] .theme-toggle-btn .icon-moon { display: none; }
+[data-theme="dark"] .theme-toggle-btn .icon-sun { display: block; }

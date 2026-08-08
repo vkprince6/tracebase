@@ -1,0 +1,30 @@
+# Firebase local state (CLI artifacts, not app code)
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+
+# NOTE: js/firebase-config.js is intentionally committed.
+# It contains only public client identifiers (apiKey, projectId, etc.) —
+# these are NOT secrets. Firebase security is enforced by Firestore/Storage
+# Security Rules, not by hiding the config. See firebase/firestore.rules.
+#
+# NEVER commit:
+#   - Firebase Admin SDK service-account*.json
+#   - Any .env file with server-side secrets
+#   - Private keys of any kind
+
+# Server-side secrets that must never be committed
+service-account*.json
+*.pem
+.env
+.env.*
+.env.local
+
+# Dependencies (if any tooling is added later)
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.log

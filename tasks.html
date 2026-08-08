@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>All Tasks · TraceBase</title>
+<link rel="stylesheet" href="css/variables.css" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/themes.css" />
+</head>
+<body>
+<a href="#page-content" class="skip-link">Skip to content</a>
+<div id="app-shell"></div>
+
+<template id="page-content-template">
+  <div class="page-header">
+    <div>
+      <h1>All Tasks</h1>
+      <p class="subtitle" id="result-count">0 tasks</p>
+    </div>
+    <div style="display:flex; gap:8px;">
+      <button class="btn btn-primary btn-sm" id="view-table-btn">Table</button>
+      <button class="btn btn-secondary btn-sm" id="view-kanban-btn">Kanban</button>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <input type="search" id="search-input" placeholder="Search tasks…" class="filter-select" style="min-width:200px;" />
+    <select class="filter-select" id="filter-project"></select>
+    <select class="filter-select" id="filter-assignee"></select>
+    <select class="filter-select" id="filter-status"></select>
+    <select class="filter-select" id="filter-priority"></select>
+    <select class="filter-select" id="sort-select">
+      <option value="dueDate:asc">Due Date (earliest)</option>
+      <option value="dueDate:desc">Due Date (latest)</option>
+      <option value="title:asc">Task Name (A–Z)</option>
+      <option value="priority:desc">Priority (high first)</option>
+      <option value="createdAt:desc">Created (newest)</option>
+      <option value="updatedAt:desc">Updated (recent)</option>
+      <option value="progress:desc">Progress (highest)</option>
+      <option value="allocatedHours:desc">Allocated Hours</option>
+    </select>
+    <button class="btn btn-ghost btn-sm" id="reset-filters-btn">Reset Filters</button>
+  </div>
+
+  <div id="task-list-wrap"></div>
+</template>
+
+<script type="module" src="js/page-tasks.js"></script>
+</body>
+</html>

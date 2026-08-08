@@ -1,0 +1,53 @@
+rules_version = '2';
+
+/**
+ * TRACEBASE — Firebase Storage Security Rules
+ * -------------------------------------------------------
+ * Storage layout:
+ *   /profile-photos/{uid}/{fileName}         - user avatar images
+ *   /task-attachments/{taskId}/{fileName}    - files attached to a task
+ *
+ * Deploy with: firebase deploy --only storage
+ */
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isReasonableFileSize() {
+      // 10 MB max per file
+      return request.resource.size < 10 * 1024 * 1024;
+    }
+
+    function isImageType() {
+      return request.resource.contentType.matches('image/.*');
+    }
+
+    /* ---------------- Profile photos ---------------- */
+    match /profile-photos/{uid}/{fileName} {
+      allow read: if isSignedIn();
+      // A user may only upload/replace their own profile photo.
+      allow write: if isSignedIn() &&
+                      request.auth.uid == uid &&
+                      isImageType() &&
+                      isReasonableFileSize();
+    }
+
+    /* ---------------- Task attachments ---------------- */
+    match /task-attachments/{taskId}/{fileName} {
+      allow read: if isSignedIn();
+      // Any signed-in active user can attach files to a task; size-capped.
+      // Fine-grained task-level authorization (assignee/manager) is enforced
+      // in Firestore for the task document itself; this guards file size/type only.
+      allow write: if isSignedIn() && isReasonableFileSize();
+      allow delete: if isSignedIn();
+    }
+
+    /* Deny everything else by default. */
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

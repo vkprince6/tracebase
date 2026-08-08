@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Log In · TraceBase</title>
+<meta name="description" content="TraceBase — Track Work. Drive Progress." />
+<link rel="stylesheet" href="css/variables.css" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/themes.css" />
+</head>
+<body>
+<a href="#login-form" class="skip-link">Skip to login form</a>
+
+<div class="auth-shell">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <span class="logo-mark" style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#7480fb,#33339f);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;">TB</span>
+      TraceBase
+    </div>
+    <div class="auth-title">
+      <h1>Welcome back</h1>
+      <p>Track Work. Drive Progress.</p>
+    </div>
+
+    <div class="auth-alert" id="login-alert" role="alert"></div>
+
+    <form id="login-form" novalidate>
+      <div class="form-group" id="fg-email">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" autocomplete="username" placeholder="you@company.com" />
+        <div class="form-error">Enter a valid email address.</div>
+      </div>
+      <div class="form-group" id="fg-password">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" autocomplete="current-password" placeholder="••••••••" />
+        <div class="form-error">Password is required.</div>
+      </div>
+      <div class="auth-row-between">
+        <label class="checkbox-row" style="margin:0; font-weight:400; color:var(--text-secondary);">
+          <input type="checkbox" id="remember-me" checked />
+          Remember me
+        </label>
+        <a href="#" id="forgot-password-link">Forgot password?</a>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="login-submit-btn">Log In</button>
+    </form>
+
+    <div class="auth-footer">
+      Don't have an account? Contact your administrator to get access.
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/page-login.js"></script>
+</body>
+</html>

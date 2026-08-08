@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>My Tasks · TraceBase</title>
+<link rel="stylesheet" href="css/variables.css" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/themes.css" />
+</head>
+<body>
+<a href="#page-content" class="skip-link">Skip to content</a>
+<div id="app-shell"></div>
+
+<template id="page-content-template">
+  <div class="page-header">
+    <div>
+      <h1>My Tasks</h1>
+      <p class="subtitle" id="my-tasks-summary">Loading…</p>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="today">Today</button>
+    <button class="chip" data-filter="upcoming">Upcoming</button>
+    <button class="chip" data-filter="overdue">Overdue</button>
+    <button class="chip" data-filter="in-progress">In Progress</button>
+    <button class="chip" data-filter="review">Review</button>
+    <button class="chip" data-filter="completed">Completed</button>
+  </div>
+  <div class="filter-bar">
+    <input type="search" id="my-tasks-search" placeholder="Search my tasks…" class="filter-select" style="min-width:220px;" />
+  </div>
+
+  <div id="my-tasks-list"></div>
+</template>
+
+<script type="module" src="js/page-my-tasks.js"></script>
+</body>
+</html>

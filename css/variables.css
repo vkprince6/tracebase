@@ -1,0 +1,157 @@
+/* =========================================================
+   TRACEBASE — Design Tokens
+   ========================================================= */
+:root {
+  /* Brand */
+  --color-brand-50:  #eef1ff;
+  --color-brand-100: #dfe4ff;
+  --color-brand-200: #c3caff;
+  --color-brand-300: #9ba6ff;
+  --color-brand-400: #7480fb;
+  --color-brand-500: #4f5ae8;
+  --color-brand-600: #3d3fc9;
+  --color-brand-700: #33339f; /* primary deep indigo */
+  --color-brand-800: #2a2a7a;
+  --color-brand-900: #1f1f56;
+
+  /* Neutrals */
+  --color-gray-0:   #ffffff;
+  --color-gray-50:  #f7f8fa;
+  --color-gray-100: #eef0f3;
+  --color-gray-200: #e2e5ea;
+  --color-gray-300: #cdd2db;
+  --color-gray-400: #a4abb8;
+  --color-gray-500: #7c8494;
+  --color-gray-600: #5c6373;
+  --color-gray-700: #414759;
+  --color-gray-800: #2a2e3a;
+  --color-gray-900: #181b23;
+
+  /* Status */
+  --color-success-bg: #e6f7ee;
+  --color-success-fg: #157347;
+  --color-success-border: #a6e3c4;
+
+  --color-warning-bg: #fff6e0;
+  --color-warning-fg: #916b00;
+  --color-warning-border: #f2d98a;
+
+  --color-danger-bg: #fdeaea;
+  --color-danger-fg: #b3261e;
+  --color-danger-border: #f3b6b2;
+
+  --color-info-bg: #e7effe;
+  --color-info-fg: #1a4fb4;
+  --color-info-border: #b7cdf8;
+
+  --color-blocked-bg: #f3e8fd;
+  --color-blocked-fg: #6a2fb0;
+  --color-blocked-border: #dcbdf7;
+
+  /* Priority */
+  --color-priority-low: #5c6373;
+  --color-priority-medium: #1a6fb4;
+  --color-priority-high: #b3720e;
+  --color-priority-critical: #b3261e;
+
+  /* Surfaces (light theme defaults) */
+  --surface-bg: var(--color-gray-50);
+  --surface-panel: var(--color-gray-0);
+  --surface-sidebar: var(--color-gray-900);
+  --surface-sidebar-active: rgba(255,255,255,0.08);
+  --surface-border: var(--color-gray-200);
+  --surface-hover: var(--color-gray-100);
+
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-600);
+  --text-muted: var(--color-gray-500);
+  --text-inverse: var(--color-gray-0);
+  --text-on-brand: #ffffff;
+
+  --brand: var(--color-brand-700);
+  --brand-hover: var(--color-brand-800);
+  --brand-soft: var(--color-brand-50);
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(16, 20, 30, 0.06);
+  --shadow-md: 0 4px 12px rgba(16, 20, 30, 0.08);
+  --shadow-lg: 0 12px 28px rgba(16, 20, 30, 0.14);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 999px;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 15px;
+  --text-lg: 17px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+
+  /* Layout */
+  --sidebar-width: 240px;
+  --sidebar-width-collapsed: 72px;
+  --header-height: 60px;
+  --bottom-nav-height: 60px;
+  --touch-target: 44px;
+
+  /* Motion */
+  --transition-fast: 120ms ease;
+  --transition-base: 180ms ease;
+
+  /* Z-index scale */
+  --z-header: 100;
+  --z-sidebar: 90;
+  --z-bottom-nav: 100;
+  --z-dropdown: 200;
+  --z-modal-backdrop: 300;
+  --z-modal: 310;
+  --z-toast: 400;
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] {
+  --surface-bg: #12141a;
+  --surface-panel: #1a1d25;
+  --surface-sidebar: #0d0e12;
+  --surface-sidebar-active: rgba(255,255,255,0.08);
+  --surface-border: #2a2e3a;
+  --surface-hover: #23262f;
+
+  --text-primary: #eef0f3;
+  --text-secondary: #a4abb8;
+  --text-muted: #7c8494;
+  --text-inverse: #181b23;
+
+  --brand: var(--color-brand-400);
+  --brand-hover: var(--color-brand-300);
+  --brand-soft: rgba(79, 90, 232, 0.16);
+
+  --color-success-bg: rgba(21,115,71,0.18);
+  --color-warning-bg: rgba(145,107,0,0.18);
+  --color-danger-bg: rgba(179,38,30,0.18);
+  --color-info-bg: rgba(26,79,180,0.2);
+  --color-blocked-bg: rgba(106,47,176,0.2);
+}

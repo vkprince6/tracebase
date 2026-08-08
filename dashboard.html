@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Dashboard · TraceBase</title>
+<link rel="stylesheet" href="css/variables.css" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/themes.css" />
+</head>
+<body>
+<a href="#page-content" class="skip-link">Skip to content</a>
+<div id="app-shell"></div>
+
+<template id="page-content-template">
+  <div class="page-header">
+    <div>
+      <h1>Dashboard</h1>
+      <p class="subtitle">A snapshot of everything happening across your projects.</p>
+    </div>
+  </div>
+
+  <div class="kpi-grid" id="kpi-grid" style="margin-bottom: var(--space-6);"></div>
+
+  <div class="panel" style="margin-bottom: var(--space-5);">
+    <div class="panel-header"><h3>Team Workload</h3></div>
+    <div class="panel-body" id="workload-table-wrap"></div>
+  </div>
+
+  <div class="panel" style="margin-bottom: var(--space-5);">
+    <div class="panel-header"><h3>Project Progress</h3></div>
+    <div class="panel-body" id="project-progress-wrap"></div>
+  </div>
+
+  <div class="chart-grid" style="margin-bottom: var(--space-5);">
+    <div class="panel">
+      <div class="panel-header"><h3>Tasks by Status</h3></div>
+      <div class="panel-body"><canvas id="chart-status"></canvas></div>
+    </div>
+    <div class="panel">
+      <div class="panel-header"><h3>Tasks by Priority</h3></div>
+      <div class="panel-body"><canvas id="chart-priority"></canvas></div>
+    </div>
+  </div>
+
+  <div class="chart-grid">
+    <div class="panel">
+      <div class="panel-header"><h3>Tasks by Project</h3></div>
+      <div class="panel-body"><canvas id="chart-project"></canvas></div>
+    </div>
+    <div class="panel">
+      <div class="panel-header"><h3>Allocated vs Actual Hours</h3></div>
+      <div class="panel-body"><canvas id="chart-hours"></canvas></div>
+    </div>
+  </div>
+</template>
+
+<script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
